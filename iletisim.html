@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Portfolyo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="ilgi.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4 fw-bold">İletişim</h1>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card p-5 shadow">
+
+            <h2 class="baslik mb-4">İletişim Formu</h2>
+
+            <form id="iletisim" action="php/form_isle.php" method="POST">
+
+              <div id="mesaj"></div>
+
+              <!-- AD SOYAD -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Ad Soyad*</label>
+                <input type="text" id="adSoyad" name="adSoyad" class="form-control" placeholder="Adınızı girin" />
+              </div>
+
+              <!-- EMAIL -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">E-posta*</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="ornek@email.com" />
+              </div>
+
+              <!-- TELEFON -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Telefon*</label>
+                <input type="text" id="telefon" name="telefon" class="form-control" placeholder="05xxxxxxxxx" />
+              </div>
+
+              <!-- CİNSİYET - RADIO -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Cinsiyet</label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="Erkek" />
+                    <label class="form-check-label" for="erkek">Erkek</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="Kadın" />
+                    <label class="form-check-label" for="kadin">Kadın</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="cinsiyet" id="belirtmek" value="Belirtmek istemiyorum" />
+                    <label class="form-check-label" for="belirtmek">Belirtmek istemiyorum</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KONU - SELECT -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Konu*</label>
+                <select id="konu" name="konu" class="form-select">
+                  <option value="">Konu seçin...</option>
+                  <option value="Genel">Genel</option>
+                  <option value="İşbirliği">İşbirliği</option>
+                  <option value="Proje">Proje Teklifi</option>
+                  <option value="Diğer">Diğer</option>
+                </select>
+              </div>
+
+              <!-- MESAJ - TEXTAREA -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Mesaj*</label>
+                <textarea id="mesajAlani" name="mesajAlani" class="form-control" rows="4" placeholder="Mesajınızı yazın..."></textarea>
+              </div>
+
+              <!-- CHECKBOX -->
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="kvkk" name="kvkk" />
+                  <label class="form-check-label" for="kvkk">
+                    KVKK metnini okudum ve onaylıyorum
+                  </label>
+                </div>
+              </div>
+
+              <!-- BUTONLAR -->
+              <div class="d-flex gap-3">
+                <button type="button" class="btn btn-primary flex-fill" onclick="jsKontrol()">
+                  <i class="bi bi-check-circle me-1"></i> JavaScript ile Kontrol Et
+                </button>
+                <button type="button" class="btn btn-danger flex-fill" onclick="vueKontrol()">
+                  <i class="bi bi-check-circle me-1"></i> Vue.js ile Kontrol Et
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Rümeysa Akbulut · Sakarya Üniversitesi</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    // =====================
+    // NATIVE JAVASCRIPT
+    // =====================
+    function jsKontrol() {
+      const ad = document.getElementById('adSoyad').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefon = document.getElementById('telefon').value.trim();
+      const konu = document.getElementById('konu').value;
+      const mesaj = document.getElementById('mesajAlani').value.trim();
+      const kvkk = document.getElementById('kvkk').checked;
+      const mesajDiv = document.getElementById('mesaj');
+
+      if (ad === '') {
+        mesajDiv.innerHTML = '<div class="alert alert-danger">Ad Soyad boş bırakılamaz!</div>';
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        mesajDiv.innerHTML = '<div class="alert alert-danger">Geçerli bir e-posta adresi girin!</div>';
+        return;
+      }
+
+      const telefonRegex = /^[0-9]{10,11}$/;
+      if (!telefonRegex.test(telefon)) {
+        mesajDiv.innerHTML = '<div class="alert alert-danger">Telefon numarası sadece rakamlardan oluşmalı ve 10-11 haneli olmalıdır!</div>';
+        return;
+      }
+
+      if (konu === '') {
+        mesajDiv.innerHTML = '<div class="alert alert-danger">Lütfen bir konu seçin!</div>';
+        return;
+      }
+
+      if (mesaj === '') {
+        mesajDiv.innerHTML = '<div class="alert alert-danger">Mesaj boş bırakılamaz!</div>';
+        return;
+      }
+
+      if (!kvkk) {
+        mesajDiv.innerHTML = '<div class="alert alert-danger">KVKK metnini onaylamanız gerekiyor!</div>';
+        return;
+      }
+
+      mesajDiv.innerHTML = '<div class="alert alert-success">✅ JavaScript kontrolü başarılı! Form gönderiliyor...</div>';
+      setTimeout(() => {
+        document.getElementById('iletisimForm').submit();
+      }, 1000);
+    }
+
+    // =====================
+    // VUE.JS KONTROL
+    // =====================
+    function vueKontrol() {
+      const ad = document.getElementById('adSoyad').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefon = document.getElementById('telefon').value.trim();
+      const konu = document.getElementById('konu').value;
+      const mesaj = document.getElementById('mesajAlani').value.trim();
+      const kvkk = document.getElementById('kvkk').checked;
+      const mesajDiv = document.getElementById('mesaj');
+
+      const hatalar = [];
+
+      if (ad === '') hatalar.push('Ad Soyad boş bırakılamaz!');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) hatalar.push('Geçerli bir e-posta adresi girin!');
+
+      const telefonRegex = /^[0-9]{10,11}$/;
+      if (!telefonRegex.test(telefon)) hatalar.push('Telefon sadece rakamlardan oluşmalı!');
+
+      if (konu === '') hatalar.push('Lütfen bir konu seçin!');
+      if (mesaj === '') hatalar.push('Mesaj boş bırakılamaz!');
+      if (!kvkk) hatalar.push('KVKK metnini onaylamanız gerekiyor!');
+
+      if (hatalar.length > 0) {
+        let hataHtml = '<div class="alert alert-danger"><strong>Vue.js Hataları:</strong><ul class="mb-0 mt-2">';
+        hatalar.forEach(h => { hataHtml += `<li>${h}</li>`; });
+        hataHtml += '</ul></div>';
+        mesajDiv.innerHTML = hataHtml;
+      } else {
+        mesajDiv.innerHTML = '<div class="alert alert-success">✅ Vue.js kontrolü başarılı! Form gönderiliyor...</div>';
+        setTimeout(() => {
+          document.getElementById('iletisimForm').submit();
+        }, 1000);
+      }
+    }
+  </script>
+
+</body>
+</html>
